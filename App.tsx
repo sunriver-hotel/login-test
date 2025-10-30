@@ -1,12 +1,11 @@
-
 import React, { useState } from 'react';
 import LoginPage from './components/LoginPage';
-import SuccessPage from './components/SuccessPage';
+import DashboardPage from './components/SuccessPage';
 import type { Language } from './types';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguage] = useState<Language>('th');
 
   const handleLoginSuccess = () => {
     setIsLoggedIn(true);
@@ -25,7 +24,7 @@ function App() {
           setLanguage={setLanguage}
         />
       ) : (
-        <SuccessPage 
+        <DashboardPage 
           onLogout={handleLogout}
           language={language}
         />

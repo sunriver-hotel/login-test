@@ -1,4 +1,3 @@
-
 export const translations = {
   en: {
     loginTitle: "Hotel Staff Login",
@@ -11,7 +10,17 @@ export const translations = {
     invalidCredentialsError: "Invalid username or password.",
     welcomeMessage: "Welcome back!",
     thai: "ไทย",
-    english: "English"
+    english: "English",
+    
+    // Dashboard
+    dashboardTitle: "Booking Calendar",
+    totalRooms: "Total Rooms",
+    available: "Available",
+    today: "Today",
+
+    // Calendar
+    months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    daysShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
   },
   th: {
     loginTitle: "เข้าสู่ระบบสำหรับพนักงาน",
@@ -24,6 +33,16 @@ export const translations = {
     invalidCredentialsError: "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง",
     welcomeMessage: "ยินดีต้อนรับ!",
     thai: "ไทย",
-    english: "English"
+    english: "English",
+
+    // Dashboard
+    dashboardTitle: "ปฏิทินการจองห้องพัก",
+    totalRooms: "ห้องพักทั้งหมด",
+    available: "ว่าง",
+    today: "วันนี้",
+
+    // Calendar
+    months: ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"],
+    daysShort: ["อา", "จ", "อ", "พ", "พฤ", "ศ", "ส"],
   }
 };
