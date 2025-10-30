@@ -49,8 +49,9 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, language, setLang
     try {
       await login(username, password);
       onLoginSuccess();
-    } catch (err) {
-      setError(t.invalidCredentialsError);
+    } catch (err: any) {
+      // แสดงข้อความ error ที่ได้รับจาก API โดยตรง, ถ้าไม่มีให้ใช้ข้อความ default
+      setError(err.message || t.invalidCredentialsError);
     } finally {
       setIsLoading(false);
     }

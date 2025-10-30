@@ -22,18 +22,18 @@ export const login = async (username: string, password: string): Promise<{ succe
     });
 
     if (!response.ok) {
-      // The API should return a meaningful error message if login fails
-      // We are using the message from the backend JSON response.
-      const errorData = await response.json();
-      throw new Error(errorData.message || 'Invalid username or password');
+      // API ควรจะส่งข้อความ error กลับมาเมื่อ login ไม่สำเร็จ
+      // เราจะใช้ข้อความจาก JSON response ของฝั่ง backend
+      const errorData = await response.json().catch(() => ({ message: 'Invalid username or password' }));
+      throw new Error(errorData.message);
     }
     
-    // The API returns { success: true } on successful login
+    // API จะส่ง { success: true } กลับมาเมื่อ login สำเร็จ
     return await response.json(); 
   } catch (error) {
     console.error('Login API call failed:', error);
-    // This catch block will handle network errors or issues with the API endpoint.
-    // The error message thrown will be displayed to the user.
+    // บล็อก catch นี้จะจัดการกับปัญหา network หรือปัญหาที่ตัว API endpoint
+    // ข้อความ error ที่ throw ออกไปจะถูกนำไปแสดงผลให้ผู้ใช้เห็น
     throw error;
   }
 };
